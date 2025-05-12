@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Destinos Turísticos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        
+        html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #222222;
+        font-family: 'Open Sans', sans-serif;
+        }
+
+
+        main, .contenido, #catalogo-container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1e3a8a; /* Azul encabezado */
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .destino-card {
+            background-color: #f3f4f6; /* Fondo gris claro */
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .destino-card:hover {
+            transform: scale(1.05);
+        }
+
+        .destino-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .destino-card h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #1e3a8a; /* Azul */
+        }
+
+        .destino-card p {
+            color: #555555; /* Gris texto */
+            font-size: 14px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav a {
+            color: #ffffff; /* Enlaces blancos */
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #d8b4fe; /* Morado claro al pasar */
+        }
+
+         @media (max-width: 480px) {
+        h1 {
+        font-size: 20px;
+         }
+
+        .grid {
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .destino-card h3 {
+            font-size: 16px;
+        }
+
+        .destino-card p {
+             font-size: 13px;
+        }
+
+        .destino-card img {
+            height: 120px;
+        }
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="imagenes/Logo.jpg" alt="Felcor">
+        </div>
+    <nav>
+        <ul>
+            <li><a href="index.php">Inicio</a></li>
+            <li><a href="destinos.html">Destinos</a></li>
+            <li><a href="frontend.html">Vehículos</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
+            <li><a href="login.php">Login</a></li>
+        </ul>
+    </nav>
+</header>
+<br><br>
+<h1>Destinos Turísticos</h1>
+
+<div class="grid" id="contenedor-destinos"></div>
+
+<footer>
+    <p>&copy; 2025 Felcor Transportes. Todos los derechos reservados.</p>
+    <p><a href="#">Política de privacidad</a> | <a href="#">Términos y condiciones</a></p>
+</footer>
+
+<script>
+    fetch('api_destinos.php')
+        .then(response => response.json())
+        .then(data => {
+            const contenedor = document.getElementById('contenedor-destinos');
+            if (Array.isArray(data)) {
+                data.forEach(destino => {
+                    const card = document.createElement('div');
+                    card.classList.add('destino-card');
+                    card.onclick = () => {
+                        location.href = `destino.php?nombre=${encodeURIComponent(destino.nombre)}`;
+                    };
+                    card.innerHTML = `
+                        <img src="${destino.imagen}" alt="${destino.nombre}">
+                        <h3>${destino.nombre}</h3>
+                        <p>${destino.descripcion}</p><br>
+                        <p><strong>Ubicacion: ${destino.ubicacion}</strong></p>
+                    `;
+                    contenedor.appendChild(card);
+                });
+            } else {
+                contenedor.innerHTML = `<p>No hay datos disponibles</p>`;
+            }
+        })
+        .catch(error => {
+            console.error('Error al obtener destinos:', error);
+        });
+</script>
+
+</body>
+</html>
