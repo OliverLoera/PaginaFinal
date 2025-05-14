@@ -99,7 +99,7 @@
 
     <footer>
         <p>&copy; 2025 Felcor Transportes. Todos los derechos reservados.</p>
-        <p><a href="#">Política de privacidad</a> | <a href="#">Términos y condiciones</a></p>
+        <p><a href="mapa.php">Mapa de Sitio</a> | <a href="creditos.php">Creditos</a></p>
     </footer>
 
     <script>
