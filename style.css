@@ -15,11 +15,12 @@ body {
 header {
     background-color: #1e3a8a;
     color: white;
-    padding: 0 30px; /* solo horizontal */
+    padding: 0 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px; /* opcional para igualar al logo */
+    height: auto;
+    flex-wrap: wrap; /* permite que se ajuste mejor en móviles */
 }
 
 .usuario {
@@ -29,12 +30,42 @@ header {
     padding-left: 20px;
 }
 
+nav {
+    position: relative; /* O usa fixed si es sticky */
+    z-index: 999;
+}
 
 /* NAVEGACIÓN */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap; /* permite que se ajusten en móvil */
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    margin: 0;
+    white-space: nowrap; /* evita saltos de línea en texto largo */
+}
+
+nav ul li a {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(145deg, #7c3aed, #5b21b6);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(92, 45, 145, 0.3);
+    font-size: 14px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background: linear-gradient(145deg, #5b21b6, #7c3aed);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(92, 45, 145, 0.4);
 }
 
 nav a {
@@ -64,7 +95,12 @@ nav a:hover {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
+
+
 }
+
+
 
 .carousel img.active {
     display: block;
@@ -229,17 +265,28 @@ footer a {
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
+    @media (max-width: 768px) {
+     header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
     nav ul {
-        flex-direction: column;
-        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        width: auto;
+        margin-top: 0;
         gap: 10px;
-        margin-top: 10px;
     }
+
+    nav ul li {
+        margin: 0;
+    }
+}
+
 
     .hero {
         height: 200px;
@@ -439,3 +486,53 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+.creditos {
+    margin-top: 50px;
+    padding: 40px 20px;
+    background-color: #f3f3f3;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+}
+
+.contenedor-creditos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.foto-autor {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-width: 100%;
+    
+}
+
+
+.texto-creditos h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.texto-creditos p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+    .foto-autor {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.foto-autor {
+    border: 4px solid #2c3eaf; /* Cambia a #6a1b9a si prefieres morado */
+}
+
+
