@@ -53,6 +53,28 @@
     </div>
     </section>
 
+    <section class="identidad-visual">
+    <h2>Identidad Visual</h2>
+
+    <div class="paleta">
+        <div class="color-box blanco">
+            <span>#ffffff</span>
+        </div>
+        <div class="color-box azul">
+            <span>#1e3a8a</span>
+        </div>
+        <div class="color-box morado">
+            <span>#a78bfa</span>
+        </div>
+    </div>
+
+    <div class="tipografias">
+        <p style="font-family: 'Montserrat', sans-serif;">Montserrat</p>
+        <p style="font-family: 'Open Sans', sans-serif;">Open Sans</p>
+        <p style="font-family: 'Poppins', sans-serif;">Poppins</p>
+    </div>
+</section>
+
     <footer>
         <p>&copy; 2025 Felcor Transportes. Todos los derechos reservados.</p>
         <p><a href="mapa.php">Mapa de Sitio</a> | <a href="creditos.php">Creditos</a></p>
