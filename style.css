@@ -588,3 +588,34 @@ html, body {
     margin: 10px 0;
 }
 
+#contenedor-horarios {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f3f4f6; /* gris clarito */
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    font-size: 16px;
+    color: #111827;
+}
+
+#contenedor-horarios p {
+    background-color: white;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border-left: 6px solid #7c3aed; /* morado */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    text-align: left;
+}
+
+#contenedor-horarios p strong {
+    color: #1e3a8a; /* azul */
+}
+
+main h1 {
+    color: #7c3aed;
+    font-size: 28px;
+    margin-top: 30px;
+}
