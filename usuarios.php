@@ -112,7 +112,7 @@ $resultado = $conexion->query("SELECT id, username FROM usuarios");
         echo "<p style='color:#0f0;'>✅ Contraseña actualizada con éxito.</p>";
     }
     ?>
-    <form method="post" style="background:#222; padding:20px; border-radius:10px; width:300px; margin:30px auto;">
+    <form method="post" style="background:#e3e3e3; padding:20px; border-radius:10px; width:300px; margin:30px auto;">
         <h3>Cambiar tu contraseña</h3>
         <input type="password" name="nuevo_password" placeholder="Nueva contraseña" required>
         <input type="hidden" name="cambiar_password" value="1">
