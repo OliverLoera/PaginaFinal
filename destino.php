@@ -198,7 +198,8 @@ if ($encontrado) {
         
         <img src="<?php echo $imagen; ?>" alt="<?php echo $nombre; ?>"><br>
 
-        <a href="contacto.php" class="boton">Cotizar este destino</a><br><br>
+        <a href="contacto.php" class="boton">Cotizar este destino</a>
+        <a href="horarios.html" class="boton" style="margin-left: 10px;">Ver horarios</a><br><br>
 
         <h2>💰 Costos de traslado sencillo en <?php echo $nombre; ?></h2>
 
