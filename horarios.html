@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Horarios de Atención | Felcor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagenes/Logo.jpg" alt="Felcor">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="frontend.html">Vehículos</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
+                <li><a href="login.php">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido">
+        <h1>Horarios de Atención por Ciudad</h1>
+        <div id="contenedor-horarios"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Felcor Transportes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        fetch('horarios.json')
+            .then(res => res.json())
+            .then(data => {
+                const contenedor = document.getElementById('contenedor-horarios');
+                data.forEach(horario => {
+                    const item = document.createElement('p');
+                    item.innerHTML = `<strong>${horario.ciudad}</strong>: ${horario.dias} - ${horario.horario}`;
+                    contenedor.appendChild(item);
+                });
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+[
+  {
+    "ciudad": "Mexicali",
+    "dias": "Lunes a Viernes",
+    "horario": "08:00 - 18:00"
+  },
+  {
+    "ciudad": "Chihuahua",
+    "dias": "Lunes a Sábado",
+    "horario": "09:00 - 17:00"
+  },
+  {
+    "ciudad": "Hermosillo",
+    "dias": "Lunes a Viernes",
+    "horario": "07:30 - 16:30"
+  },
+  {
+    "ciudad": "Juarez",
+    "dias": "Lunes a Sabado",
+    "horario": "08:00 - 19:00"
+  },
+  {
+    "ciudad": "Tijuana",
+    "dias": "Lunes a Viernes",
+    "horario": "07:30 - 18:30"
+  },
+  {
+    "ciudad": "Gomez",
+    "dias": "Lunes a Viernes",
+    "horario": "08:00 - 19:00"
+  },
+  {
+    "ciudad": "Torreon",
+    "dias": "Lunes a Viernes",
+    "horario": "08:00 - 18:00"
+  },
+  {
+    "ciudad": "Mazaltan",
+    "dias": "Lunes a Viernes",
+    "horario": "07:00 - 18:00"
+  },
+  {
+    "ciudad": "Culiacan",
+    "dias": "Lunes a Viernes",
+    "horario": "07:00 - 17:00"
+  },
+  {
+    "ciudad": "Los Mochis",
+    "dias": "Lunes a Viernes",
+    "horario": "07:00 - 18:00"
+  },
+  {
+    "ciudad": "Obregon",
+    "dias": "Lunes a Viernes",
+    "horario": "07:00 - 18:00"
+  },
+  {
+    "ciudad": "El Paso",
+    "dias": "Lunes a Sabado",
+    "horario": "08:00 - 19:00"
+  }
+]
